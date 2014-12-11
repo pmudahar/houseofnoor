@@ -1,11 +1,14 @@
 'use strict';
 
+var ref = new Firebase('https://houseofnoor.firebaseio.com/');
+
 angular.module('noorApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'wu.masonry'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

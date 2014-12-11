@@ -1,22 +1,31 @@
 'use strict';
 
-angular.module('noorApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+angular.module('noorApp').controller('MainCtrl', function ($scope, $http) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+    $scope.bricks = [
+        {src: "https://www.filepicker.io/api/file/fQ7QhNQCS9vnvdeMmggR"},
+        {src: "https://www.filepicker.io/api/file/f9U2KQoTHaAmuuMwEhFA"}
+    ];
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+    var update = function(obj){
+        var arr = [];
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });
+        for (var key in obj){
+            arr.push({src: obj[key].picUrl});
+        }
+
+        console.log('arr ', arr);
+        return arr; 
+    }
+
+    var getData= function(){
+        ref.child('products').once('value', function(data) {
+            var val = data.val();
+
+            return update(val);
+        });                    
+    }
+
+    //$scope.bricks = getData();
+});
+

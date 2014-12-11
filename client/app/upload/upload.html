@@ -1,0 +1,47 @@
+
+<div class = "inputBox">
+	<form role="form" name="productInfo" novalidate>
+
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle labelStyle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				Type
+				<span class="caret"></span>
+			</button>
+
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="labelStyle">Sofas</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="labelStyle">Chairs</a></li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<div class="inline labelStyle">	
+				Product Name
+			</div>
+
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="product.name">
+			</div>
+		</div>
+
+		
+		<div class='labelStyle'>	
+			Description
+		</div>
+		
+		<textarea class="form-control" rows='8' ng-model="product.description"></textarea>
+		
+		<div class='uploadPic'>
+			<button class="btn btn-primary"  ng-click="uploadPicture()">Upload Picture</button>	
+		</div>
+
+		<div class='submit'>
+			<button type="submit" class="btn btn-primary"  ng-click="submit()" ng-disabled="!productInfo.$valid">SUBMIT</button>
+		</div>
+
+	</form>
+</div>
+
+
+	
+	
