@@ -8,7 +8,8 @@ angular.module('noorApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'wu.masonry'
+  'wu.masonry',
+  'firebase'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
