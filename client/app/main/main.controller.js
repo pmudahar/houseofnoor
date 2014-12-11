@@ -1,31 +1,16 @@
 'use strict';
 
-angular.module('noorApp').controller('MainCtrl', function ($scope, $http) {
+angular.module('noorApp').controller('MainCtrl', function ($scope, $http, $firebase) {
 
-    $scope.bricks = [
-        {src: "https://www.filepicker.io/api/file/fQ7QhNQCS9vnvdeMmggR"},
-        {src: "https://www.filepicker.io/api/file/f9U2KQoTHaAmuuMwEhFA"}
-    ];
+    var sync = $firebase(ref);
+    var firebaseObj = sync.$asObject();
+    $scope.bricks = [];
 
-    var update = function(obj){
-        var arr = [];
+    firebaseObj.$loaded().then(function(){
+        angular.forEach(firebaseObj.products, function(value, key){
+            $scope.bricks.push({src: value.picUrl});
+        });
+    });
 
-        for (var key in obj){
-            arr.push({src: obj[key].picUrl});
-        }
-
-        console.log('arr ', arr);
-        return arr; 
-    }
-
-    var getData= function(){
-        ref.child('products').once('value', function(data) {
-            var val = data.val();
-
-            return update(val);
-        });                    
-    }
-
-    //$scope.bricks = getData();
 });
 
