@@ -1,7 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<div masonry column-width="50" masonry-options="{ gutter: 20 }">
+<div class="container">
+<div masonry>
     <div class="masonry-brick" ng-repeat="brick in bricks">
         <img ng-src="{{ brick.src }}" alt="A masonry brick">
     </div>
+</div>
 </div>
