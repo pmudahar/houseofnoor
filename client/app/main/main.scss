@@ -1,3 +1,28 @@
+.noorBar{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.title{
+    color: white;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 3px;
+    font-size: 1.2em;
+}
+
+.of{
+    font-family: 'Italianno', cursive;
+    font-size: 1em;
+    text-transform: lowercase;
+}
+
 .thing-form {
     margin: 20px 0;
 }
@@ -30,9 +55,9 @@
 }
 
 .masonry-brick { 
-    width: 25%; 
+    width: 24%; 
     margin: 0.1em;
-    float: left;
+    // float: left;
 }
 
 .masonry-brick img { 
@@ -41,4 +66,9 @@
 
 .masonry-brick.loaded{
     display: block;
+}
+
+.container{
+    background-color: gray;
+    padding: 0 0;
 }
