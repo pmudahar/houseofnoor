@@ -9,7 +9,8 @@ angular.module('noorApp', [
   'ui.router',
   'ui.bootstrap',
   'wu.masonry',
-  'firebase'
+  'firebase',
+  'ngDialog'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
