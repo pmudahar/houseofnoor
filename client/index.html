@@ -13,11 +13,14 @@
 
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat|Italianno' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css" />
+      <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -59,6 +62,7 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
       <script src="bower_components/get-style-property/get-style-property.js"></script>
       <script src="bower_components/get-size/get-size.js"></script>
       <script src="bower_components/eventie/eventie.js"></script>
@@ -70,6 +74,7 @@
       <script src="bower_components/masonry/masonry.js"></script>
       <script src="bower_components/imagesloaded/imagesloaded.js"></script>
       <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+      <script src="bower_components/ngDialog/js/ngDialog.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -82,14 +87,19 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/User/User.service.js"></script>
+          <script src="app/UserData/UserData.service.js"></script>
           <script src="app/account/account.js"></script>
           <script src="app/account/login/login.controller.js"></script>
           <script src="app/account/settings/settings.controller.js"></script>
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/compare/compare.controller.js"></script>
+          <script src="app/compare/compare.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/products/products.service.js"></script>
           <script src="app/upload/upload.controller.js"></script>
           <script src="app/upload/upload.js"></script>
           <script src="components/auth/auth.service.js"></script>

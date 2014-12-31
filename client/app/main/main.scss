@@ -3,6 +3,7 @@
     width: 100%;
     height: 50px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .title{
@@ -10,12 +11,45 @@
     font-family: Montserrat;
     text-transform: uppercase;
     text-align: center;
+    
+    width: 100%;
+    height: 100%;
     position: relative;
+    
+    padding-top: 10px;
     top: 50%;
     transform: translateY(-50%);
     letter-spacing: 3px;
     font-size: 1.2em;
 }
+
+
+.menu{
+    text-align: right;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    float: left;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    font-size: .6em;
+    color: white;
+    text-align: right;
+}
+
+
+li {
+    padding: 10px;
+    display: inline;
+    float: left;
+}
+
 
 .of{
     font-family: 'Italianno', cursive;
@@ -58,6 +92,7 @@
     width: 24%; 
     margin: 0.1em;
     // float: left;
+    display: inline;
 }
 
 .masonry-brick img { 
@@ -69,6 +104,83 @@
 }
 
 .container{
-    background-color: gray;
+    //background-color: gray;
     padding: 0 0;
 }
+
+
+.imgClass{
+    width: 60%;
+    display: block;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 700px;
+}
+
+// .brick.rollover {
+//     display: block;
+//     width: 150px;
+//     height: 44px;
+//     text-decoration: none;
+//     background: url("icon2.jpg");
+//     }
+
+
+// a{
+//     position: relative;
+//     display: inline-block;
+// }
+
+// a:hover:before{     
+// // opacity: 0.3; 
+// // filter: alpha(opacity=30); 
+// // display: block;
+// // width: 80px;
+// // height: 80px;
+// // position: absolute;
+// // top: 0;
+// // right: 0;
+
+//     font-family: Montserrat;
+//     font-size: 1em;
+//     //color: #0099ff;
+//     color: black;
+//     content: 'O';
+//     display: block;
+//     width: 0px;
+//     height: 0px;
+//     position: absolute;
+//     top: 0;
+//     right: 15px;
+
+// } 
+
+
+// .displace {
+//     position: absolute;
+//     left: -5000px;
+// }
+
+.notFavorite{
+    font-family: Montserrat;
+    font-size: 1.5em;
+    color: #cccccc;
+}
+
+.notFavorite:hover{
+    color: #0099ff;
+}
+
+.favorite{
+    font-family: Montserrat;
+    font-size: 1.5em;
+    color: #0099ff;
+}
+
+.product{
+    font-family: Lato;
+    font-size: 1.0em;
+}
+
+

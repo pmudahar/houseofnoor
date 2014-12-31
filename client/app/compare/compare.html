@@ -1,0 +1,32 @@
+<div class="noorBar">
+	<div class="title">
+		House <span class="of">of</span> Noor
+		
+		<div class="menu">
+				<ul>
+				  <li>About</li>
+				  <li ng-show="!authObj.$getAuth()" ng-click="login()">Login</li>
+				  <li ng-hide="!authObj.$getAuth()" ng-click="logout()">Logout</li>
+				  <li ng-click="goTo('compare')">Compare</li>
+				</ul>
+		</div>
+	</div>
+</div>
+
+
+<span ng-click="showMenu=!showMenu">Add a compare column</span>
+
+<div ng-show="showMenu">
+<img src="sofa.png" ng-click="filterType('0', 'sofa')">
+<img src="sofa.png" ng-click="filterType('1', 'sofa')">
+<img src="sofa.png" ng-click="filterType('2', 'sofa')">
+</div>
+
+<div class="column" ng-repeat="div in divs">
+	<a href="#" ng-click="getPrev(div)"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+	<img ng-repeat="product in div.favorites" ng-src="{{product.picUrl}}"  ng-show="isActive(div, $index)" class="colImg">
+	<a href="#" ng-click="getNext(div)"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+</div>
+
+
+

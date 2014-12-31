@@ -1,14 +1,45 @@
 <div class="noorBar">
 	<div class="title">
 		House <span class="of">of</span> Noor
+		
+		<div class="menu">
+				<ul>
+				  <li>About</li>
+				  <li ng-show="!authObj.$getAuth()" ng-click="login()">Login</li>
+				  <li ng-hide="!authObj.$getAuth()" ng-click="logout()">Logout</li>
+				  <li ng-click="goTo('compare')">Compare</li>
+				</ul>
+		</div>
 	</div>
+</div>
+
+<div>
+	
+	<img src="sofa.png" ng-click="productType='sofa'">
+	<img src='chair.png' ng-click="productType='chair'">
+	<img src='floorLamp.png' ng-click="productType=''">
+	<img src='ceilingLight.png' ng-click="productType='chair'">
 </div>
 
 <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
 <div class="container">
-<div masonry>
-    <div class="masonry-brick" ng-repeat="brick in bricks">
-        <img ng-src="{{ brick.src }}" alt="A masonry brick">
-    </div>
+	<div masonry>
+	    <div class="masonry-brick" ng-repeat="brick in bricks | filter: { type: productType } ">
+	        <a href="#"><img ng-src="{{ brick.picUrl }}" alt="A masonry brick" ng-click="clickToOpen($index)" class="brick"></a>
+	     
+	     		<!-- <span>{{ user.favorites.indexOf(brick.$id) }}</span> -->
+	        <span ng-show="favKeys.indexOf(brick.$id) === -1" class="notFavorite">O</span>
+	        <span ng-hide="favKeys.indexOf(brick.$id) === -1" class="favorite">O</span>
+	        
+	        <span ng-click="addFavorite(brick.$id, brick)" class="product">
+	        	{{brick.name}} 
+	        </span>
+
+	    </div>
+	</div>
 </div>
-</div>
+
+
+<!-- <a href="#"><img src="soho_products.jpg"></a> -->
+		<!-- <span ng-click="login()" class="menu">Login</span>
+		<span ng-click="authObj.$unauth()"class="menu">Logout</span> -->
